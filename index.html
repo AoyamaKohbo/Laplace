@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="ja">
+
+  <head>
+    <script type="text/x-mathjax-config">
+
+       MathJax.Hub.Config({TeX:{equationNumbers:{autoNumber:"AMS"}}});
+
+    </script>
+
+    <script type="text/javascript" async 
+
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+
+    </script>
+
+  </head>
+
+  <body>
+  <h3>Laplace(ラプラス)変換と伝達関数</h3>
+  <h3>§Laplace変換</h3>
+
+  <p>有限関数\(f(t)\)のLaplace変換は次式となります。</p>
+    \begin{align}
+      F(s) =\int_0^\infty f(t) e^{-st}dt\label{eq:LaplaceTrns}
+    \end{align}
+
+  <p>Laplace変換には次の公式があります。</p>
+    \begin{align}
+      \int_0^\infty \frac{df(t)}{dt} e^{-st}dt = sF(s) - f(0)\label{eq:LaplaceDiff}
+    \end{align}
+
+    <h3>§伝達関数</h3>
+  <p>入力信号\(u(t)\)に対する出力信号\(y(t)\)の関係を次式とします。
+      ただし、\(d^ku(t)/dt^k|_{t=0} =0~(k=0,\cdots,m-1)\)、\(d^ky(t)/dt^k|_{t=0} = 0~(k=0,\cdots,n-1)\)とします。</p>
+    \begin{align}
+      \sum_{k=0}^n b_k\frac{d^k y(t)}{dt^k} = \sum_{k=0}^m a_k\frac{d^k u(t)}{dt^k}\label{eq:DgtFlt}
+    \end{align}
+
+  <p>\(u(t)\)と\(y(t)\)のラプラス変換をそれぞれ\(U(s)\)と\(Y(s)\)とし、
+      式\eqref{eq:DgtFlt}をラプラス変換すると公式\eqref{eq:LaplaceDiff}により次式となります。</p>
+    \begin{align}
+      \sum_{k=0}^n b_k s^k Y(s) = \sum_{k=0}^m a_k s^k U(s)\label{eq:LapDgtFlt}
+    \end{align}
+
+  <p>式\eqref{eq:DgtFlt}の伝達関数\(G(s)\)は次式となります。</p>
+    \begin{align}
+      G(s) = \frac{Y(s)}{U(s)} = \frac{\displaystyle\sum_{k=0}^n b_ks^k Y(s)}{\displaystyle\sum_{k=0}^m a_ks^k U(s)}
+      = \frac{b_ns^n+\cdots + b_0}{a_ms^m+\cdots+a_0}\label{eq:TrnsFunc}
+    \end{align}
+
+   <p><a href="https://aoyamakohbo.github.io/Craftlogy/">->TOP</a></p>
+</body>
+
+</html>
