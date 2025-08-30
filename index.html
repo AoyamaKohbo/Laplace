@@ -28,7 +28,15 @@
 
   <p>Laplace変換には次の公式があります。</p>
     \begin{align}
-      \int_0^\infty \frac{df(t)}{dt} e^{-st}dt = sF(s) - f(0)\label{eq:LaplaceDiff}
+      \int_0^\infty \frac{df(t)}{dt} e^{-st}dt = [f(t)e^{-st}]_0^\infty+s\int_0^\infty \frac{df(t)}{dt} e^{-st}dt = sF(s) - f(0)\label{eq:LaplaceDiff}
+    \end{align}
+
+    \begin{align}
+      \int_0^\infty f(t-T) e^{-st}dt = \int_0^\infty f(\tau) e^{-s(\tau+T)}dt = e^{-sT}\int_0^\infty f(\tau) e^{-s\tau}d\tau = e^{-sT}F(s)\label{eq:LaplaceDly}
+    \end{align}
+
+    \begin{align}
+      \int_0^\infty e^{-at} e^{-st}dt = \int_0^\infty e^{-(s+a)t}dt = \frac{-1}{s+a}[e^{-(s+a)t}]_0^\infty = \frac{1}{s+a}\label{eq:LaplaceExp}
     \end{align}
 
     <h3>§伝達関数</h3>
